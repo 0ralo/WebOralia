@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Новый пост
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input class="form-control" id="exampleFormControlInput1" placeholder="Title" name="title">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+        </div>
+{#    <div class="mb-3">#}
+{#        {{ form.image }}#}
+{#    </div>#}
+        <button type="submit" class="btn btn-warning">Publicate</button>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </form>
+{% endblock %}

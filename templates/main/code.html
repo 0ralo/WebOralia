@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Code
+{% endblock %}
+
+{% block styles %}
+<script xmlns="http://www.w3.org/1999/html">
+    function copy() {
+    navigator.clipboard.writeText("https://0ralo.ru/register?invitedby={{ code }}")
+        .then(() => { alert(`Код скопирован`) })
+        .catch((error) => {
+            alert(`Не удалось скопировать код`)})
+}</script>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Пригласительный код: <span><big>{{ code }}</big></span></h1>
+        <h1><button onclick="copy()">Скопировать пригласительную ссылку</button></h1>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Лента постов
+{% endblock %}
+
+{% block body %}
+    <div>
+        {% for post in posts %}
+            {% if post.is_visible %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content }}</p>
+                </div>
+                <div class="card-footer text-muted">{{ post.author.get_username }} || {{ post.date | date:"Y-m-d" }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

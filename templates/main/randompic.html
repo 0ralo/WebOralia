@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Случайная картинка
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+    {% csrf_token %}
+        <button type="submit">generate</button>
+    </form>
+    <img src="/media/image.png" width="200" height="200px" alt="picture">
+{% endblock %}

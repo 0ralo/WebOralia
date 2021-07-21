@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Это я!
+{% endblock %}
+
+{% block styles %}
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="That's Me!">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{% static "assets/plugins/font-awesome/css/font-awesome.css" %}">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+                <img class="profile" src="{% static "assets/images/img.png" %}" alt="" width="100px" height="120px"/>
+                <h1 class="name">Sergey Kornilov</h1>
+                <h3 class="tagline">Junior Developer</h3>
+            </div><!--//profile-container-->
+
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto: Ora1o@yandex.ru">Ora1o@yandex.ru</a></li>
+                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:897719960**">8-977-199-60-**</a></li>
+                    <li class="website"><i class="fa fa-globe"></i><a href="http://0ralo.site" target="_blank">0ralo.ru</a></li>
+                    <li class="github"><i class="fa fa-github"></i><a href="https://github.com/0ralo" target="_blank">github.com/0ralo</a></li>
+                </ul>
+            </div><!--//contact-container-->
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+                <div class="item">
+                    <h4 class="degree">School in Russia</h4>
+                    <div class="time">2010 - 2021</div>
+                </div><!--//item-->
+            </div><!--//education-container-->
+
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>Russian <span class="lang-desc">(Native)</span></li>
+                    <li>English <span class="lang-desc">(Stable)</span></li>
+                </ul>
+            </div><!--//interests-->
+
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>Programming</li>
+                    <li>Design</li>
+                    <li>ELANA</li>
+                </ul>
+            </div><!--//interests-->
+
+        </div><!--//sidebar-wrapper-->
+
+        <div class="main-wrapper">
+
+            <section class="section summary-section">
+                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+                <div class="summary">
+                    <p>I born in Russia. I have liked programming since i was 10. Today I prefer making web-sites or creating mobile app (for android only)</p>
+                </div><!--//summary-->
+            </section><!--//section-->
+
+            <section class="section experiences-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Junior developer</h3>
+                            <div class="time">2012- Now</div>
+                        </div><!--//upper-row-->
+                        <div class="company">For myself</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>I have learned python and java.</p>
+                        <p>Today i'm learning Django Framework and kotlin</p>
+                    </div><!--//details-->
+                </div><!--//item-->
+
+
+
+            </section><!--//section-->
+
+            <section class="section projects-section">
+                <h2 class="section-title"><i class="fa fa-archive"></i>Projects available for registered users</h2>
+            </section><!--//section-->
+
+            <section class="skills-section section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+                <div class="skillset">
+
+                    <div class="item">
+                        <h3 class="level-title">Python &amp; Django</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="70%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">HTML5 &amp; CSS</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="30%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Python</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="90%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Java</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="60%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Android</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="45%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Linux</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="80%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Bots</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="70%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Kotlin</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Web, sockets, protocols</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="30%">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <h3 class="level-title">Async, Threading</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="90%">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="{% static "assets/plugins/jquery-1.11.3.min.js" %} "></script>
+    <script type="text/javascript" src="{% static "assets/plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static "assets/js/main.js" %}"></script>
+{% endblock %}
