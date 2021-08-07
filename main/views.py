@@ -103,12 +103,3 @@ def handler500(request: WSGIRequest, exception=None):
 	request.status_code = 500
 	return render(request, "errors/500.html")
 
-
-class BestGirl(TemplateView):
-	template_name = "main/bestgirl.html"
-
-	def get(self, request: WSGIRequest, *args, **kwargs):
-		if request.GET.get("password", "1") == "elana":
-			return super().get(request, *args, **kwargs)
-		else:
-			return handler404(request)

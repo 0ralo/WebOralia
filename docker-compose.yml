@@ -1,37 +1,37 @@
 version: '3.7'
 
 services:
-  postgresdb:
-    build:
-      context: ./docker/postgres
-      dockerfile: Dockerfile
-    environment:
-      - POSTGRES_PASSWORD=devpass
-    volumes:
-      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - "5432:5432"
+    postgresdb:
+        build:
+            context: ./docker/postgres
+            dockerfile: Dockerfile
+        environment:
+            - POSTGRES_PASSWORD=testpass
+        volumes:
+            - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+        ports:
+            - "5432:5432"
 
-  web:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/usr/src/app
-    depends_on:
-      - postgresdb
+    web:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        volumes:
+            - ./:/usr/src/app
+        depends_on:
+            - postgresdb
 
-  nginx:
-    build:
-      context: ./docker/nginx
-      dockerfile: Dockerfile
-    depends_on:
-      - web
-      - postgresdb
-    ports:
-      - "443:443"
-      - "80:80"
-    volumes:
-      - ./static/:/static/
-      - ./media/:/media/
-      - ./docker/nginx/ssl:/etc/ssl/certs
+    nginx:
+        build:
+            context: ./docker/nginx
+            dockerfile: Dockerfile
+        depends_on:
+            - web
+            - postgresdb
+        ports:
+            - "443:443"
+            - "80:80"
+        volumes:
+            - ./static/:/static/
+            - ./media/:/media/
+            - ./docker/nginx/ssl:/etc/ssl/certs
