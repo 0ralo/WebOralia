@@ -7,7 +7,7 @@ key: str = "283bdf73"
 
 @csrf_exempt
 def root(request):
-	if request.POST.get("type", None) == "confirmation" and request.POST.get("group_id", None) == 183943330:
+	if request.POST.get("type", None) == "confirmation" and request.POST.get("group_id", None) == "183943330":
 		return HttpResponse(key)
 	else:
 		rsp = HttpResponse("ERROR")
