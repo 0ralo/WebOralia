@@ -8,6 +8,7 @@ urlpatterns = [
 	path('panel/', admin.site.urls, name="admin"),
 	path('', include('main.urls')),
 	path('', include('UserAuth.urls')),
+	path('', include('vkapi.urls')),
 ]
 
 if settings.DEBUG:

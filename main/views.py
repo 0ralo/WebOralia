@@ -18,6 +18,10 @@ class HomeView(TemplateView):
 	template_name = "main/main.html"
 
 
+class JSView(TemplateView):
+	template_name = "main/myjstests.html"
+
+
 class Summary(TemplateView):
 	template_name = "main/summary.html"
 
@@ -102,4 +106,3 @@ def handler404(request: WSGIRequest, exception=None):
 def handler500(request: WSGIRequest, exception=None):
 	request.status_code = 500
 	return render(request, "errors/500.html")
-

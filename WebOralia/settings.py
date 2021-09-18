@@ -21,6 +21,7 @@ INSTALLED_APPS = [
 	'django.contrib.staticfiles',
 	'main.apps.MainConfig',
 	'UserAuth.apps.UserauthConfig',
+	'vkapi.apps.VkapiConfig',
 	'psycopg2',
 ]
 
