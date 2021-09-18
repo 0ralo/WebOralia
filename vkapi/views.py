@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
-key: str = "283bdf73"
+key: str = "28bd1796"
 
 
 @csrf_exempt
