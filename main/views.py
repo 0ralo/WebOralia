@@ -4,6 +4,7 @@ import string
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required, login_required
 from django.core.handlers.wsgi import WSGIRequest
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView, CreateView
 from django.utils.decorators import method_decorator
@@ -112,7 +113,7 @@ def handler500(request: WSGIRequest, exception=None):
 def get_random_tag():
 	f = ""
 	for i in range(random.randint(3, 10)):
-		f += string.ascii_lowercase[random.randint(0, len(string.ascii_lowercase)-1)]
+		f += string.ascii_lowercase[random.randint(0, len(string.ascii_lowercase) - 1)]
 	return f
 
 
@@ -133,4 +134,15 @@ def hardparse(req: WSGIRequest):
 	if a % 6 == 0:
 		tag = get_random_tag()
 		html = f"<{tag} id={random.randint(0, 100)}>{html}</{tag}>"
-	return render(req, "main/unparsable.html", {"body": html})
+	html = """
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+            <meta charset="UTF-8">
+            <title>It is impossible to parse this</title>
+		</head>
+        <body>
+        {0}
+        </body>
+	</html>""".format(html)
+	return HttpResponse(html)
