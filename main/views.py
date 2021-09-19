@@ -116,33 +116,3 @@ def get_random_tag():
 		f += string.ascii_lowercase[random.randint(0, len(string.ascii_lowercase) - 1)]
 	return f
 
-
-def hardparse(req: WSGIRequest):
-	html = "<{0}>{1}</{0}>".format(get_random_tag(), get_random_tag())
-	a = random.randint(0, 60)
-	if a % 2 == 0:
-		tag = get_random_tag()
-		html = f"<{tag} class={random.randint(0, 1000)} hidden='hidden'>{random.randint(0, 2000)}</{tag}>"
-		html = f"<{tag} class={get_random_tag()}>{html}</{tag}>"
-	if a % 3 == 0:
-		tag = get_random_tag()
-		html = f"<{tag}>{html}</{tag}>"
-		html = f"<{tag} hidden='hidden'>{random.randint(0, 1000)}</{tag}>"
-	if a % 4 == 0:
-		tag = get_random_tag()
-		html = f"<__{tag}__>{html}</__{tag}__>"
-	if a % 6 == 0:
-		tag = get_random_tag()
-		html = f"<{tag} id={random.randint(0, 100)}>{html}</{tag}>"
-	html = """
-	<!DOCTYPE html>
-	<html lang="en">
-		<head>
-            <meta charset="UTF-8">
-            <title>It is impossible to parse this</title>
-		</head>
-        <body>
-        {0}
-        </body>
-	</html>""".format(html)
-	return HttpResponse(html)
