@@ -1,4 +1,5 @@
 import random
+import string
 
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required, login_required
@@ -106,3 +107,30 @@ def handler404(request: WSGIRequest, exception=None):
 def handler500(request: WSGIRequest, exception=None):
 	request.status_code = 500
 	return render(request, "errors/500.html")
+
+
+def get_random_tag():
+	f = ""
+	for i in range(random.randint(3, 10)):
+		f += string.ascii_lowercase[random.randint(0, len(string.ascii_lowercase)-1)]
+	return f
+
+
+def hardparse(req: WSGIRequest):
+	html = "<{0}></{0}>".format(get_random_tag())
+	a = random.randint(0, 60)
+	if a % 2 == 0:
+		tag = get_random_tag()
+		html = f"<{tag} class={random.randint(0, 1000)} hidden='hidden'>{random.randint(0, 2000)}</{tag}>"
+		html = f"<{tag} class={get_random_tag()}>{html}</{tag}>"
+	if a % 3 == 0:
+		tag = get_random_tag()
+		html = f"<{tag}>{html}</{tag}>"
+		html = f"<{tag} hidden='hidden'>{random.randint(0, 1000)}</{tag}>"
+	if a % 4 == 0:
+		tag = get_random_tag()
+		html = f"<__{tag}__>{html}</__{tag}__>"
+	if a % 6 == 0:
+		tag = get_random_tag()
+		html = f"<{tag} id={random.randint(0, 100)}>{html}</{tag}>"
+	return render(req, "main/unparsable.html", {"body": html})
