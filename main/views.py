@@ -118,7 +118,7 @@ def get_random_tag():
 
 
 def hardparse(req: WSGIRequest):
-	html = "<{0}></{0}>".format(get_random_tag())
+	html = "<{0}>{1}</{0}>".format(get_random_tag(), get_random_tag())
 	a = random.randint(0, 60)
 	if a % 2 == 0:
 		tag = get_random_tag()
