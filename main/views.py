@@ -109,10 +109,3 @@ def handler500(request: WSGIRequest, exception=None):
 	request.status_code = 500
 	return render(request, "errors/500.html")
 
-
-def get_random_tag():
-	f = ""
-	for i in range(random.randint(3, 10)):
-		f += string.ascii_lowercase[random.randint(0, len(string.ascii_lowercase) - 1)]
-	return f
-
