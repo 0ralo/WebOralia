@@ -11,5 +11,4 @@ urlpatterns = [
 	path('new_code/', NewCode.as_view(), name="get_invite_code"),
 	path('pic/', RandomImage.as_view(), name="randomimage"),
 	path('js/', JSView.as_view(), name="javascripttest"),
-	path('unparsable/', hardparse, name="unparsableWebsite")
 ]

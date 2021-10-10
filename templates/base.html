@@ -53,7 +53,7 @@
                 {% endif %}
                 {% if user.is_superuser %}
                     <li class="nav-item">
-                        <a class="nav-link" href="panel/">Admin Panel</a>
+                        <a class="nav-link" href="{% url 'admin:index' %}">Admin Panel</a>
                     </li>
                 {% endif %}
             </ul>
