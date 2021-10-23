@@ -22,3 +22,4 @@ psycopg2-binary
 requests~=2.25.1
 
 django-environ
+djangorestframework~=3.12.4

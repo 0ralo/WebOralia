@@ -1,6 +1,6 @@
 from django.urls import path
 
-from main.views import *
+from main.views import HomeView, PostsView, Summary, SecretView, NewPostsView, NewCode, RandomImage, JSView
 
 urlpatterns = [
 	path('', HomeView.as_view(), name="home"),

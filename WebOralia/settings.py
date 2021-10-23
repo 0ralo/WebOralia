@@ -19,9 +19,13 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	# apps
 	'main.apps.MainConfig',
 	'UserAuth.apps.UserauthConfig',
+	'API.apps.ApiConfig',
+	# libraries
 	'psycopg2',
+	'rest_framework',
 ]
 
 MIDDLEWARE = [
