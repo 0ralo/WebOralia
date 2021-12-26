@@ -2,15 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from API.views import UserExistView, PostView, UserById
 
 urlpatterns = [
 	path('panel/', admin.site.urls, name="admin"),
 	path('', include('main.urls')),
 	path('', include('UserAuth.urls')),
-	path('api/exist', UserExistView.as_view()),
-	path('api/posts', PostView.as_view()),
-	path('api/ideer', UserById.as_view()),
 ]
 
 if settings.DEBUG:

@@ -10,7 +10,7 @@ SECRET_KEY = env("SECRET_KEY")
 
 DEBUG = bool(int(env("DEBUG")))
 
-ALLOWED_HOSTS = ['www.0ralo.ru', '0ralo.ru', 'localhost']
+ALLOWED_HOSTS = ['www.0ralo.ru', '0ralo.ru', 'localhost', "127.0.0.1"]
 
 INSTALLED_APPS = [
 	'django.contrib.admin',
@@ -22,7 +22,6 @@ INSTALLED_APPS = [
 	# apps
 	'main.apps.MainConfig',
 	'UserAuth.apps.UserauthConfig',
-	'API.apps.ApiConfig',
 	# libraries
 	'psycopg2',
 	'rest_framework',
@@ -36,7 +35,6 @@ MIDDLEWARE = [
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'BlackList.middleware.BlackListMiddleware',
 ]
 
 ROOT_URLCONF = 'WebOralia.urls'
