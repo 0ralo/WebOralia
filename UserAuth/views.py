@@ -9,7 +9,6 @@ import requests
 from django.views.generic import CreateView
 
 from UserAuth.forms import RegisterForm, LoginForm
-from UserAuth.models import BlackList
 from main.models import Codes
 
 
