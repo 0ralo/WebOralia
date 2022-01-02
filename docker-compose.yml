@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-    postgresdb:
+    postgres:
         build:
             context: ./docker/postgres
             dockerfile: Dockerfile
@@ -19,7 +19,7 @@ services:
         volumes:
             - ./:/usr/src/app
         depends_on:
-            - postgresdb
+            - postgres
 
     nginx:
         build:
@@ -27,7 +27,7 @@ services:
             dockerfile: Dockerfile
         depends_on:
             - web
-            - postgresdb
+            - postgres
         ports:
             - "443:443"
             - "80:80"

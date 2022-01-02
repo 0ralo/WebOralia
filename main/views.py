@@ -1,10 +1,8 @@
 import random
-import string
 
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required, login_required
 from django.core.handlers.wsgi import WSGIRequest
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView, CreateView
 from django.utils.decorators import method_decorator

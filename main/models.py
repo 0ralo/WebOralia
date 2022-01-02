@@ -45,4 +45,4 @@ class People(models.Model):
 
 	class Meta:
 		verbose_name = "Челик"
-		verbose_name_plural = "Люди"
+		verbose_name_plural = "Людишки"
