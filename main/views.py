@@ -78,6 +78,7 @@ class SecretView(ListView):
 		qs = super(SecretView, self).get_context_data(**kwargs)
 		for n, i in enumerate(qs['people']):
 			i.number = n
+		qs["len"] = len(qs["people"])
 		return qs
 
 	@method_decorator(login_required)
