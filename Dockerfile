@@ -1,13 +1,4 @@
-FROM python:3
-
-WORKDIR /usr/src/app
-
-COPY requirements.txt .
-COPY entrypoint.sh .
-
-RUN pip install -r requirements.txt
-RUN chmod +x entrypoint.sh
-
-COPY . .
-
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+FROM docker/whalesay:latest
+LABEL Name=weboralia Version=0.0.1
+RUN apt-get -y update && apt-get install -y fortunes
+CMD ["sh", "-c", "/usr/games/fortune -a | cowsay"]
