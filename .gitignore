@@ -7,3 +7,4 @@
 /.idea
 /docker/nginx/ssl
 .env
+/.vscode

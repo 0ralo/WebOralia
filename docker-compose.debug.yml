@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  weboralia:
-    image: weboralia
-    build:
-      context: .
-      dockerfile: ./Dockerfile
