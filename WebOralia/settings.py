@@ -14,7 +14,6 @@ ALLOWED_HOSTS = ['www.0ralo.ru', '0ralo.ru']
 
 if DEBUG:
 	ALLOWED_HOSTS.append("localhost")
-	ALLOWED_HOSTS.append("0.0.0.0")
 	ALLOWED_HOSTS.append("127.0.0.1")
 
 INSTALLED_APPS = [
