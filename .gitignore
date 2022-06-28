@@ -8,3 +8,4 @@
 /docker/nginx/ssl
 .env
 /.vscode
+/data
