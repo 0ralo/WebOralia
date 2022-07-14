@@ -9,6 +9,7 @@ from django.utils.decorators import method_decorator
 import numpy
 from PIL import Image
 import uuid
+from django.http.response import HttpResponseNotFound, HttpResponseServerError
 
 from .forms import PostForm
 from .models import Posts, Codes, People
@@ -24,6 +25,12 @@ class JSView(TemplateView):
 
 class Summary(TemplateView):
 	template_name = "main/summary.html"
+
+	def get(self, request, *args, **kwargs):
+		if int(request.GET.get("secret", 0)) == 3248:
+			return render(request, self.template_name)
+		else:
+			return HttpResponseServerError()
 
 
 class PostsView(ListView):
