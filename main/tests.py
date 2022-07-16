@@ -1,13 +1,30 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 
 
 class MainTestCase(TestCase):
 	def setUp(self) -> None:
-		self.value = 10
-		return 100
+		self.client = Client()
 
-	def test_is_value_ten(self):
-		self.assertEqual(10, self.value)
+	def test_are_pages_available(self):
+		self.assertEqual(
+			200, self.client.get("").status_code
+		)
+		self.assertEqual(
+			200, self.client.get("posts/").status_code
+		)
+		self.assertEqual(
+			200, self.client.get("summary/").status_code
+		)
+		self.assertEqual(
+			200, self.client.get("secret/").status_code
+		)
+		self.assertEqual(
+			200, self.client.get("newpost/").status_code
+		)
+		self.assertEqual(
+			200, self.client.get("new_code/").status_code
+		)
+		self.assertEqual(
+			200, self.client.get("pic/").status_code
+		)
 
-	def test_is_value_eleven(self):
-		self.assertEqual(11, self.value)
