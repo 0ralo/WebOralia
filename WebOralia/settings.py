@@ -69,9 +69,6 @@ DATABASES = {
 		'PASSWORD': env("password"),
 		'HOST': env("host"),
 		'PORT': env("port"),
-		'TEST': {
-			'NAME': 'test_db',
-		},
 	}
 }
 
