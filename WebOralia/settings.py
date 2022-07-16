@@ -70,7 +70,7 @@ DATABASES = {
 		'HOST': env("host"),
 		'PORT': env("port"),
 		'TEST': {
-			'NAME': 'test_finance',
+			'NAME': 'test_db',
 		},
 	}
 }
