@@ -39,3 +39,18 @@ class LoginForm(forms.Form):
 			attrs={
 				"class": "form-control", "id": "password", "name": "username"
 			}))
+
+
+class TelegramAuth(forms.Form):
+	id_ = forms.CharField(
+		widget=forms.TextInput(
+			attrs={
+				"class": "form-control", "id": "id", "aria-describedby": "emailHelp", "name": "id"
+			}))
+	code = forms.CharField(
+		widget=forms.TextInput(
+			attrs={
+				"class": "form-control", "id": "code", "aria-describedby": "emailHelp", "name": "code"
+			}
+		)
+	)

@@ -2,3 +2,4 @@ CREATE USER site WITH PASSWORD 'mysuperpasssword';
 
 CREATE DATABASE weboralia;
 GRANT ALL PRIVILEGES ON DATABASE weboralia TO site;
+ALTER USER site CREATEDB;

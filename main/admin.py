@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from UserAuth.models import User
 from main.models import People, Posts, Codes
 
 
@@ -17,3 +19,9 @@ class PostAdmin(admin.ModelAdmin):
 class PeopleAdmin(admin.ModelAdmin):
 	list_display = ('pk', 'title', 'image')
 	list_editable = ('title',)
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+	list_display = ('id', 'username', 'password', 'from_telegram', 'tg_id')
+	list_editable = ('from_telegram', 'tg_id')

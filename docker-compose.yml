@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 services:
     postgres:
@@ -20,6 +20,7 @@ services:
             - ./:/usr/src/app
         depends_on:
             - postgres
+            - redis
 
     nginx:
         build:
@@ -42,3 +43,9 @@ services:
         volumes:
             - ./data/certbot/conf:/etc/letsencrypt
             - ./data/certbot/www:/var/www/certbot
+
+    redis:
+        image: "redis:alpine"
+        ports:
+            - '6379:6379'
+        restart: always

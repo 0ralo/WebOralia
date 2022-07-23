@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from UserAuth.models import User
 
 
 class Posts(models.Model):

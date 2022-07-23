@@ -67,7 +67,7 @@ DATABASES = {
 		'NAME': env("name"),
 		'USER': env("user"),
 		'PASSWORD': env("password"),
-		'HOST': env("host"),
+		'HOST': env("lhost"),
 		'PORT': env("port"),
 	}
 }
@@ -97,6 +97,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'UserAuth.User'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
@@ -107,7 +109,7 @@ STATICFILES_DIRS = [
 	BASE_DIR / 'mystatic',
 ]
 
-CSRF_TRUSTED_ORIGINS=['https://0ralo.ru']
+CSRF_TRUSTED_ORIGINS = ('https://0ralo.ru',)
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 GOOGLE_RECAPTCHA_SECRET_KEY = env("google_recaptcha_secret_key")
