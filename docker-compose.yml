@@ -44,8 +44,3 @@ services:
             - ./data/certbot/conf:/etc/letsencrypt
             - ./data/certbot/www:/var/www/certbot
 
-    redis:
-        image: "redis:alpine"
-        ports:
-            - '6379:6379'
-        restart: always

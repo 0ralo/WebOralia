@@ -6,7 +6,6 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.conf import settings
 import requests
-from django.views import View
 from django.views.generic import CreateView, TemplateView
 
 from UserAuth.forms import RegisterForm, LoginForm, TelegramAuth
@@ -75,44 +74,6 @@ class MyRegisterView(CreateView):
 				for j in i:
 					messages.error(request, j)
 		return self.get(request, args, kwargs)
-
-
-def auth_user(request):
-	user, _ = User.objects.get_or_create(tg_id=request.POST.get("id", "0"))
-	user.username = "123"
-	user.set_password("123123")
-	user.save()
-	return user
-
-
-class MyRegisterViewFromTelegram(TemplateView):
-	template_name = "UserAuth/telegram_auth.html"
-
-	def get(self, request, *args, **kwargs):
-		form = TelegramAuth()
-		return render(request, self.template_name, {"form": form, "link": ""})
-
-	def post(self, request, *args, **kwargs):
-		form = TelegramAuth()
-		response = request.get(
-			"https://api.telegram.org/bot{0}/sendMessage?chat_id={1}&text={2}"
-			.format(1, 2, 3))
-		if self.request.recaptcha_is_valid:
-			print("123")
-		return render(request, self.template_name, {"form": form, "post": True, "link": "check/"})
-
-
-class Confirmation(View):
-
-	def get(self, request, *args, **kwargs):
-		...
-
-	def post(self, request, *args, **kwargs):
-		# TODO telegram login logic
-
-		user = auth_user(request)
-		login(request, user)
-		return redirect("home")
 
 
 def log_out(request):
